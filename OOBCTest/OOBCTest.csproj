@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DrawLineTest.cs" />
+    <Compile Include="DrawTriangleTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OOBC\OOBC.csproj">

@@ -10,7 +10,7 @@ namespace OOBCTest
     {
         [TestMethod]
         public void should_draw_line_with_2_points()
-        {
+        {       
             var expectedLine = new Line(new Point(0, 0), new Point(1, 1));
 
             var lineDrawer = new LineDrawer();
