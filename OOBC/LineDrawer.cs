@@ -5,37 +5,24 @@ namespace OOBC
 {
     public class LineDrawer : ShapeDrawer
     {
-        private List<Point> points;
+        private const int LINE_POINTS_NUMBER = 2;
 
-        public Line Draw(Point start, Point end)
+        public LineDrawer()
         {
-            AddPoint(start);
-            AddPoint(end);
-            return (Line) Draw();
-        }
-
-        public override void AddPoint(string point)
-        {
-            Point _point = PointParser.ToPoint(point);
-            AddPoint(_point);
-        }
-
-        private void AddPoint(Point point)
-        {
-            if (this.points == null)
+            if (Points == null)
             {
-                this.points = new List<Point>(2);
-            }
-
-            if (this.points.Count < this.points.Capacity)
-            {
-                this.points.Add(point);
+                Points = new List<Point>(LINE_POINTS_NUMBER);
             }
         }
 
         public override Shape Draw()
         {
-            return new Line(points[0], points[1]);
+            if (Points.Count < LINE_POINTS_NUMBER)
+            {
+                throw new NotEnoughPointsForDrawingException();
+            }
+            return new Line(Points[0], Points[1]);
         }
+
     }
 }

@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Line.cs" />
     <Compile Include="LineDrawer.cs" />
+    <Compile Include="NotEnoughPointsForDrawingException.cs" />
     <Compile Include="PointParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

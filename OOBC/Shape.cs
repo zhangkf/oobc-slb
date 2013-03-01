@@ -1,6 +1,6 @@
 ﻿namespace OOBC
 {
-    public class Shape
+    public abstract class Shape
     {
     }
 }
