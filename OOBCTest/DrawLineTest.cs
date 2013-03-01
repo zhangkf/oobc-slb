@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OOBC;
 
@@ -15,8 +16,7 @@ namespace OOBCTest
             var lineDrawer = new LineDrawer();
             lineDrawer.AddPoint(new Point(0,0), new Point(1,1));
             var line = lineDrawer.Draw();
-
-            Assert.AreEqual(expectedLine, line);
+            line.Should().Be(expectedLine);
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace OOBCTest
             lineDrawer.AddPoint(new Point(0,0), new Point(1,1), new Point(2,2));
             var line = lineDrawer.Draw();
 
-            Assert.AreEqual(expectedLine, line);
+            line.Should().Be(expectedLine);
         }
 
         [TestMethod]
